@@ -42,7 +42,7 @@ const btnShare = document.getElementById('new-post');
 btnShare.addEventListener('click', event => {
   const currentUser = firebase.auth().currentUser;
   const textInPost = postText.value;
-  if (textInPost === '' || textInPost === ' ') {
+  if (textInPost.trim() === '') {
     alert('No ingresaste texto');
     console.log('vacio');
   } else {
@@ -56,5 +56,4 @@ btnShare.addEventListener('click', event => {
       text: textInPost
     });
   };
-  // window.social.displayPost(textInPost);
 });

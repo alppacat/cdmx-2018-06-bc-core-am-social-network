@@ -22,9 +22,9 @@
       document.getElementById('user-paragraph').innerHTML = `Bienvenidx ${user.displayName}`;
       const userPhoto = user.photoURL;
       if (userPhoto) {
-        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
       } else {
-        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" class="avatar">`;
       }
       document.getElementById('user-email').innerHTML = `${user.email}`;
       console.log(user.photoURL);

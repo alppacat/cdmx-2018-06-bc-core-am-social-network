@@ -22,9 +22,9 @@
       document.getElementById('user-paragraph').innerHTML = `Bienvenidx ${user.displayName}`;
       const userPhoto = user.photoURL;
       if (userPhoto) {
-        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
       } else {
-        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" class="avatar">`;
       }
       document.getElementById('user-email').innerHTML = `${user.email}`;
       console.log(user.photoURL);
@@ -51,7 +51,7 @@ const btnShare = document.getElementById('new-post');
 btnShare.addEventListener('click', event => {
   const currentUser = firebase.auth().currentUser;
   const textInPost = postText.value;
-  if (textInPost === '' || textInPost === ' ') {
+  if (textInPost.trim() === '') {
     alert('No ingresaste texto');
     console.log('vacio');
   } else {
@@ -65,5 +65,4 @@ btnShare.addEventListener('click', event => {
       text: textInPost
     });
   };
-  // window.social.displayPost(textInPost);
 });

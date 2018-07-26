@@ -35,6 +35,7 @@
       window.location.assign('../src/views/home.html');
     }
   });
+  
   const facebookLogin = () => {
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider)

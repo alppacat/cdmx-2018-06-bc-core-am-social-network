@@ -8,5 +8,10 @@ src/css/
 images/
 views/
 index.html
+README.MD 
+.eslintrc
+test/
+Ux research/
+
 *.swp
 

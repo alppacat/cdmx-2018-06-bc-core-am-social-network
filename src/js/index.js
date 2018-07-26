@@ -6,7 +6,6 @@
   const btnLoginGoogle = document.getElementById('btn-google');
   const btnLoginfacebook = document.getElementById('btn-facebook');
   let provider = new firebase.auth.GoogleAuthProvider();
-  let providerFacebook = new firebase.auth.FacebookAuthProvider();
   // Add login event with Google
   btnLoginGoogle.addEventListener('click', event => {
     // Sign in
@@ -15,8 +14,7 @@
   });
   
   btnLoginfacebook.addEventListener('click', event => {
-    const promise = firebase.auth().signInWithRedirect(providerFacebook);
-    promise.catch(event => alert(event.message));
+    facebookLogin();
   });
 
   // Add login event
@@ -29,6 +27,7 @@
     const promise = auth.signInWithEmailAndPassword(email, password);
     promise.catch(event => alert(event.message));
   });
+
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) { 
@@ -36,4 +35,26 @@
       window.location.assign('../src/views/home.html');
     }
   });
+  const facebookLogin = () => {
+    let provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        let token = result.credential.accessToken;
+        // The signed-in user info.
+        let user = result.user;    
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        // The email of the user's account used.
+        let email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        let credential = error.credential;
+        console.log(errorCode);
+        // ...
+      });
+  };
 }());

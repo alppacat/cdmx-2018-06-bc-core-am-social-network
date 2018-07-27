@@ -7,7 +7,7 @@ let appFirebase = {};
     databaseURL: 'https://prueba-firebase-ef04b.firebaseio.com',
     projectId: 'prueba-firebase-ef04b',
     storageBucket: 'prueba-firebase-ef04b.appspot.com',
-    messagingSenderId: '499846254860',
+    messagingSenderId: '499846254860'
   };
   firebase.initializeApp(config);
   appFirebase = firebase;

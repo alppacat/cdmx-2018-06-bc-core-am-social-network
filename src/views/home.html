@@ -20,8 +20,15 @@
 <body>
     <div class="logged-in" id="logged-in-section">
         <h3>¡Hola!</h3>
-        <p id="user-paragraph">¡Bienvenido! Te has logueado exitosamente</p>
+        <div class="container-user">
+            <div id="profile-image" class="hola" id="user-image"></div>
+            <div class="" id="user-info">
+                <p id="user-paragraph">¡Bienvenido! Te has logueado exitosamente</p>
+                <p id="user-email"></p>
+            </div>
+        </div>
         <button id="btn-logout" class="btn btn-action"> Cierra sesión </button>
+    </div>
     </div>
     <div class="logged-in">
         <h3>¿Qué te dio luz este día? </h3>
@@ -31,9 +38,11 @@
     <div class="logged-in" id="new-posts">
         <h3>Estos son tus publicaciones:</h3>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script src="../js/firebase.js"></script>
-    <script src="../js/main.js"></script>
     <script src="../js/home.js"></script>
     <script src="../js/print.js"></script>
 </body>

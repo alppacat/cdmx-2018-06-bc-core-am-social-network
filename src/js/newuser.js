@@ -12,25 +12,25 @@
     const email = txtEmail.value;
     const password = txtPassword.value;
     const auth = firebase.auth();
-    window.social.displayNickname(name);
+    // window.social.displayNickname(name);
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, password);
+    console.log(firebase.auth().currentUser);
     promise
       .catch(event =>
         alert(event.message));
   });
 
   // Add a realtime listener
-
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
       console.log(firebaseUser);
-      window.location.assign('../views/home.html');
       let user = firebase.auth().currentUser;
       if (user !== null) {
         user.updateProfile({
           displayName: txtName.value
         });
+        window.location.assign('../views/home.html');
         document.getElementById('user-paragraph').innerHTML = ` Bienvenido ${user.displayName};`;
       }
     } else {

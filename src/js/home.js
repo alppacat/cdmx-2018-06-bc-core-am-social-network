@@ -2,7 +2,7 @@
   // Get elements
   const btnLogout = document.getElementById('btn-logout');
   // Get a reference to the database service
-  var database = firebase.database();
+  let database = firebase.database();
 
   // Add logout event
   btnLogout.addEventListener('click', event => {
@@ -20,32 +20,49 @@
         displayName: user.displayName
       });
       document.getElementById('user-paragraph').innerHTML = `Bienvenidx ${user.displayName}`;
+      const userPhoto = user.photoURL;
+      if (userPhoto) {
+        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
+      } else {
+        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" class="avatar">`;
+      }
+      document.getElementById('user-email').innerHTML = `${user.email}`;
+      console.log(user.photoURL);
     } else {
       console.log('not logged in');
     }
-    userConect = database.ref('data');
-    agregarUser(user.uid, user.displayName, user.email);
+    let id = user.uid;
+    userConect = database.ref('users/' + id);
+    addUser(user.displayName, user.email, user.photoURL);
   });
-  function agregarUser(uid, name, email) {
-    var conectados = userConect.push({
-      uid: uid,
+
+  addUser = (name, email, photo) => {
+    let conect = userConect.push({
       name: name,
-      email: email
+      email: email,
+      photo: photo
     });
-  }
+  };
+}());
 
-  const postText = document.getElementById('post-entry'); // Texto de entrada
-  const btnShare = document.getElementById('new-post'); // Boton de compartir
-  
+const postText = document.getElementById('post-entry');
+const btnShare = document.getElementById('new-post');
 
-  btnShare.addEventListener('click', event => { // Evento para mandar el texto dee entrada a la database
-    const currentUser = firebase.auth().currentUser;
-    let textInPost = postText.value;
+btnShare.addEventListener('click', event => {
+  const currentUser = firebase.auth().currentUser;
+  const textInPost = postText.value;
+  if (textInPost.trim() === '') {
+    alert('No ingresaste texto');
+    console.log('vacio');
+  } else {
+    console.log('texto');
+    postText.value = '';
+    // Create a unique key for messages collection
     const newPostKey = firebase.database().ref().child('posts').push().key;
     firebase.database().ref(`posts/${newPostKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
       text: textInPost
     });
-  });
-}());
+  };
+});

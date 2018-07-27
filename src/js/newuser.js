@@ -15,6 +15,7 @@
     // window.social.displayNickname(name);
     // Sign in
     const promise = auth.createUserWithEmailAndPassword(email, password);
+    console.log(firebase.auth().currentUser);
     promise
       .catch(event =>
         alert(event.message));

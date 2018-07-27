@@ -80,13 +80,13 @@ const editPost = () => {
       refPostToEdit.update({
         text: areaEdit.value
       });
-      editButton.innerHTML = 'Editar';
+      editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
       originTxt.classList.add('hide');
       listItem.classList.remove('editMode');
       editArea.value = '';
     } else {
       // console.log(containsClass, listItem);
-      editButton.innerHTML = 'Guardar ';
+      editButton.innerHTML = '<span class="glyphicon glyphicon-floppy-disk"></span> Guardar';
       areaEdit.value = dataPost.text;
       originTxt.classList.remove('hide');
       listItem.classList.add('editMode');

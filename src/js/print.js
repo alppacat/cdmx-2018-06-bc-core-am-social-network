@@ -26,25 +26,31 @@ const init = () => {
   getPostOfFirebase();
 };
 
-const createNewPostElement = (postString) => {
+const createNewPostElement = (postString, creatorString) => {
   // console.log('holi create');
   // Crea los elementos que aparecen en el DOM
   const listItem = document.createElement('div');
+  const author = document.createElement('p');
   const paragraph = document.createElement('p');
   const editArea = document.createElement('textarea');
   const editButton = document.createElement('button');
   const deleteButton = document.createElement('button');
 
+  // Asigna clase a la area de texto para editar
+  listItem.className = 'postCard';
   editArea.className = 'hide';
+  author.className = 'postName'; // Quitar camel case
 
   // Asignación de texto y clase a botones
   editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
   editButton.className = 'edit';
   deleteButton.innerHTML = '<span class="glyphicon glyphicon-trash"></span> Borrar';
   deleteButton.className = 'delete';
+  author.innerHTML = `${creatorString} <hr>`;
   paragraph.innerHTML = postString;
 
   // Añadiendo elementos al DOM
+  listItem.appendChild(author);
   listItem.appendChild(paragraph);
   listItem.appendChild(editArea);
   listItem.appendChild(editButton);
@@ -56,8 +62,9 @@ const createNewPostElement = (postString) => {
 
 const addPost = (key, postCollection) => {
   // console.log('holi addPost');
-  // console.log(postCollection.text)
-  const listItem = createNewPostElement(postCollection.text);
+  // console.log(postCollection.text, postCollection.creatorName);
+  const listItem = createNewPostElement(postCollection.text, postCollection.creatorName);
+  // console.log(listItem);
   listItem.setAttribute('data-keypost', key);
   postList.appendChild(listItem);
   bindPostEvents(listItem);
@@ -72,10 +79,12 @@ const bindPostEvents = (postListItem) => {
 };
 
 const deletePost = () => {
+  // console.log(event.target.parentNode);
   // console.log(event.target.parentNode.dataset.keypost);
   const keyListItem = event.target.parentNode.dataset.keypost;
   const refPostToDelete = refPost.child(keyListItem);
-  console.log(refPostToDelete);
+  // const refUID = refPost.child(keyListItem).child(creator);
+  // console.log(refUID);
   refPostToDelete.remove();
 };
 

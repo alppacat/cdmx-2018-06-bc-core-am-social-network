@@ -30,7 +30,7 @@
 
   // Add a realtime listener
   firebase.auth().onAuthStateChanged(firebaseUser => {
-    if (firebaseUser) { 
+    if (firebaseUser) {
       console.log(firebaseUser);
       window.location.assign('../src/views/home.html');
     }

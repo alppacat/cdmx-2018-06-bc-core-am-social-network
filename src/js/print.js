@@ -1,20 +1,3 @@
-// window.onload = () => {
-//   firebase.database().ref('posts')
-//     .on('child_added', (newPost) => {
-//       document.getElementById('new-posts').innerHTML += `
-//       <div class="postCard">
-//         <p class="postName">${newPost.val().creatorName}</p>
-//         <hr>
-//         <p>${newPost.val().text}</p>
-//         <hr>
-//         <button class="btn btn-info btn-sm">
-//           <span class="glyphicon glyphicon-trash"></span>
-//           Borrar
-//         </button>
-//       </div>
-//     `;
-//     });
-// };
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');

@@ -19,7 +19,7 @@ const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
 let refPost;
-
+let totalLikes = 0;
 const init = () => {
   // sharePost.addEventListener('click', sendPostToFirebase);
   refPost = firebase.database().ref().child('posts');
@@ -35,6 +35,8 @@ const createNewPostElement = (postString, creatorString) => {
   const editArea = document.createElement('textarea');
   const editButton = document.createElement('button');
   const deleteButton = document.createElement('button');
+  const likesButton = document.createElement('button');
+  const numberLikes = document.createElement('p');
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
@@ -46,6 +48,10 @@ const createNewPostElement = (postString, creatorString) => {
   editButton.className = 'edit';
   deleteButton.innerHTML = '<span class="glyphicon glyphicon-trash"></span> Borrar';
   deleteButton.className = 'delete';
+  likesButton.innerHTML = '<i class="fas fa-arrow-alt-circle-up"></i>Like';
+  likesButton.className = 'likes';
+  numberLikes.className = 'number-likes';
+  numberLikes.innerHTML = totalLikes;
   author.innerHTML = `${creatorString} <hr>`;
   paragraph.innerHTML = postString;
 
@@ -55,6 +61,8 @@ const createNewPostElement = (postString, creatorString) => {
   listItem.appendChild(editArea);
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
+  listItem.appendChild(likesButton);
+  listItem.appendChild(numberLikes);
 
   // console.log(listItem);
   return listItem;
@@ -74,7 +82,9 @@ const bindPostEvents = (postListItem) => {
   // console.log(postListItem);
   const editButton = postListItem.querySelector('button.edit');
   const deleteButton = postListItem.querySelector('button.delete');
+  const likesButton = postListItem.querySelector('button.likes');
 
+  likesButton.addEventListener('click', likeCounter);
   deleteButton.addEventListener('click', deletePost);
 };
 
@@ -91,14 +101,35 @@ const deletePost = () => {
 const getPostOfFirebase = () => {
   // console.log('holi');
   refPost.on('value', (snapshot) => {
-    postList.innerHTML = '';
+    postList.innerHTML = '<h3> Estas son las publicaciones:</h3>';
     const dataPost = snapshot.val();
-    console.log(dataPost);
+    // console.log(dataPost);
     for (let key in dataPost) {
       // console.log(dataPost[key]);
-      addPost(key, dataPost[key]);
+      addPost(key, dataPost[key]);  
     }
+    console.log(dataPost);
+    
   });
+};
+const likeCounter = () => {
+  
+  
+
+  // let numberLikes = document.getElementsByClassName('number-likes');
+
+  // console.log(numberLikes);
+  
+  // numberLikes.innerHTML = totalLikes;
+  // console.log(totalLikes);
+  }
+  // const numberLikes = document.getElementsByClassName('number-likes');
+  // numberLikes.innerHTML = totalLikes;
+  
+  // let starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+  // starCountRef.on('value', function(snapshot) {
+  //   updateStarCount(postElement, snapshot.val());
+  // });
 };
 
 window.onload = init;

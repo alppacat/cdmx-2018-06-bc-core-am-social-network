@@ -62,7 +62,8 @@ btnShare.addEventListener('click', event => {
     firebase.database().ref(`posts/${newPostKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
-      text: textInPost
+      text: textInPost,
+      likes: totalLikes
     });
   };
 });

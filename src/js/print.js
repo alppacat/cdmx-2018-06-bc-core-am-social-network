@@ -21,8 +21,9 @@ const createNewPostElement = (postString, creatorString) => {
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
-  editArea.className = 'hide';
+  editArea.className = 'hide'; // Hide
   author.className = 'postName'; // Quitar camel case
+  paragraph.className = 'editMode';
 
   // Asignación de texto y clase a botones
   editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
@@ -59,7 +60,49 @@ const bindPostEvents = (postListItem) => {
   const deleteButton = postListItem.querySelector('button.delete');
 
   deleteButton.addEventListener('click', deletePost);
+  editButton.addEventListener('click', editPost);
 };
+
+const editPost = () => {
+  const listItem = event.target.parentNode;
+  let originTxt = listItem.querySelector('textarea');
+  const keyListItem = event.target.parentNode.dataset.keypost;
+  const areaEdit = listItem.querySelector('p[class= editMode]');
+  const editButton = event.target;
+  const containsClass = listItem.classList.contains('editMode');
+
+  const refPostToEdit = refPost.child(keyListItem);
+  
+  refPostToEdit.once('value', (snapshot)=>{
+    const dataPost = snapshot.val();
+    // console.log(dataPost);
+    
+
+    if (containsClass) {
+      console.log(containsClass, listItem);
+      
+      // console.log(areaEdit.value);
+      refPostToEdit.update({
+        text: originTxt.value
+      });  
+      editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
+      originTxt.classList.add('hide');
+
+      areaEdit.value = '';
+      areaEdit.innerHTML = originTxt.value;
+    
+      listItem.classList.remove('editMode');
+    } else {
+      // console.log(containsClass, listItem);
+      editButton.innerHTML = '<span class="glyphicon glyphicon-floppy-disk"></span> Guardar';
+      originTxt.value = dataPost.text;
+      
+      originTxt.classList.remove('hide');
+      listItem.classList.add('editMode');
+    }
+  });
+};
+
 
 const deletePost = () => {
   // console.log(event.target.parentNode);
@@ -76,7 +119,7 @@ const getPostOfFirebase = () => {
   refPost.on('value', (snapshot) => {
     postList.innerHTML = '';
     const dataPost = snapshot.val();
-    console.log(dataPost);
+    // console.log(dataPost);
     for (let key in dataPost) {
       // console.log(dataPost[key]);
       addPost(key, dataPost[key]);
@@ -85,4 +128,3 @@ const getPostOfFirebase = () => {
 };
 
 window.onload = init;
-

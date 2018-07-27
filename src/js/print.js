@@ -6,6 +6,8 @@ window.onload = () => {
         <p class="postName">${newPost.val().creatorName}</p>
         <hr>
         <p>${newPost.val().text}</p>
+        <button onclick="likes()" id="btn-like">Likes </button>
+        <p>${likes}</p>
       </div>
     `;
     });

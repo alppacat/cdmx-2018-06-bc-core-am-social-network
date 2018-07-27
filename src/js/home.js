@@ -1,6 +1,7 @@
 (function() {
   // Get elements
   const btnLogout = document.getElementById('btn-logout');
+  const btnLike = document.getElementById('btn-like');
   // Get a reference to the database service
   let database = firebase.database();
 
@@ -62,7 +63,9 @@ btnShare.addEventListener('click', event => {
     firebase.database().ref(`posts/${newPostKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
-      text: textInPost
+      text: textInPost,
+      likes: like
     });
   };
 });
+

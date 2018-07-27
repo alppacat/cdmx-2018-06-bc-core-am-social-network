@@ -65,7 +65,6 @@ const bindPostEvents = (postListItem) => {
 
 const editPost = () => {
   const listItem = event.target.parentNode;
-  // console.log(listItem.querySelector('textarea'));
   let originTxt = listItem.querySelector('textarea');
   const keyListItem = event.target.parentNode.dataset.keypost;
   const areaEdit = listItem.querySelector('p[class= editMode]');
@@ -73,21 +72,31 @@ const editPost = () => {
   const containsClass = listItem.classList.contains('editMode');
 
   const refPostToEdit = refPost.child(keyListItem);
+  
   refPostToEdit.once('value', (snapshot)=>{
     const dataPost = snapshot.val();
+    // console.log(dataPost);
+    
 
     if (containsClass) {
+      console.log(containsClass, listItem);
+      
+      // console.log(areaEdit.value);
       refPostToEdit.update({
-        text: areaEdit.value
-      });
+        text: originTxt.value
+      });  
       editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
       originTxt.classList.add('hide');
+
+      areaEdit.value = '';
+      areaEdit.innerHTML = originTxt.value;
+    
       listItem.classList.remove('editMode');
-      editArea.value = '';
     } else {
       // console.log(containsClass, listItem);
       editButton.innerHTML = '<span class="glyphicon glyphicon-floppy-disk"></span> Guardar';
-      areaEdit.value = dataPost.text;
+      originTxt.value = dataPost.text;
+      
       originTxt.classList.remove('hide');
       listItem.classList.add('editMode');
     }

@@ -1,20 +1,3 @@
-// window.onload = () => {
-//   firebase.database().ref('posts')
-//     .on('child_added', (newPost) => {
-//       document.getElementById('new-posts').innerHTML += `
-//       <div class="postCard">
-//         <p class="postName">${newPost.val().creatorName}</p>
-//         <hr>
-//         <p>${newPost.val().text}</p>
-//         <hr>
-//         <button class="btn btn-info btn-sm">
-//           <span class="glyphicon glyphicon-trash"></span>
-//           Borrar
-//         </button>
-//       </div>
-//     `;
-//     });
-// };
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
@@ -38,8 +21,9 @@ const createNewPostElement = (postString, creatorString) => {
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
-  editArea.className = 'hide';
+  editArea.className = 'hide'; // Hide
   author.className = 'postName'; // Quitar camel case
+  paragraph.className = 'editMode';
 
   // Asignación de texto y clase a botones
   editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
@@ -76,7 +60,40 @@ const bindPostEvents = (postListItem) => {
   const deleteButton = postListItem.querySelector('button.delete');
 
   deleteButton.addEventListener('click', deletePost);
+  editButton.addEventListener('click', editPost);
 };
+
+const editPost = () => {
+  const listItem = event.target.parentNode;
+  // console.log(listItem.querySelector('textarea'));
+  let originTxt = listItem.querySelector('textarea');
+  const keyListItem = event.target.parentNode.dataset.keypost;
+  const areaEdit = listItem.querySelector('p[class= editMode]');
+  const editButton = event.target;
+  const containsClass = listItem.classList.contains('editMode');
+
+  const refPostToEdit = refPost.child(keyListItem);
+  refPostToEdit.once('value', (snapshot)=>{
+    const dataPost = snapshot.val();
+
+    if (containsClass) {
+      refPostToEdit.update({
+        text: areaEdit.value
+      });
+      editButton.innerHTML = 'Editar';
+      originTxt.classList.add('hide');
+      listItem.classList.remove('editMode');
+      editArea.value = '';
+    } else {
+      // console.log(containsClass, listItem);
+      editButton.innerHTML = 'Guardar ';
+      areaEdit.value = dataPost.text;
+      originTxt.classList.remove('hide');
+      listItem.classList.add('editMode');
+    }
+  });
+};
+
 
 const deletePost = () => {
   // console.log(event.target.parentNode);
@@ -93,7 +110,7 @@ const getPostOfFirebase = () => {
   refPost.on('value', (snapshot) => {
     postList.innerHTML = '';
     const dataPost = snapshot.val();
-    console.log(dataPost);
+    // console.log(dataPost);
     for (let key in dataPost) {
       // console.log(dataPost[key]);
       addPost(key, dataPost[key]);
@@ -102,4 +119,3 @@ const getPostOfFirebase = () => {
 };
 
 window.onload = init;
-

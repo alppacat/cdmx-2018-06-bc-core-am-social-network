@@ -135,23 +135,24 @@ const getPostOfFirebase = () => {
       addPost(key, dataPost[key]);  
     }
     console.log(dataPost);
-    
   });
 };
 const likeCounter = () => {
+  let numberLikes = document.getElementsByClassName('number-likes');
+  totalLikes += 
+  numberLikes.innerHTML = totalLikes;
+  refPost.on('value', (snapshot) => {
+    const dataLikes = snapshot.val();
+    console.log(dataLikes);
   
-  
-
-  // let numberLikes = document.getElementsByClassName('number-likes');
-
+    for (let key in dataLikes) {
+      addPost(key, dataLikes[key]);
+    }
+  });
   // console.log(numberLikes);
-  
-  // numberLikes.innerHTML = totalLikes;
   // console.log(totalLikes);
-  }
   // const numberLikes = document.getElementsByClassName('number-likes');
   // numberLikes.innerHTML = totalLikes;
-  
   // let starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
   // starCountRef.on('value', function(snapshot) {
   //   updateStarCount(postElement, snapshot.val());

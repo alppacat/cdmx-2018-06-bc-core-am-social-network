@@ -1,3 +1,5 @@
+// PRINT POST SECTION
+
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');

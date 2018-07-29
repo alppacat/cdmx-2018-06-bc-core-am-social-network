@@ -1,25 +1,8 @@
-// window.onload = () => {
-//   firebase.database().ref('posts')
-//     .on('child_added', (newPost) => {
-//       document.getElementById('new-posts').innerHTML += `
-//       <div class="postCard">
-//         <p class="postName">${newPost.val().creatorName}</p>
-//         <hr>
-//         <p>${newPost.val().text}</p>
-//         <hr>
-//         <button class="btn btn-info btn-sm">
-//           <span class="glyphicon glyphicon-trash"></span>
-//           Borrar
-//         </button>
-//       </div>
-//     `;
-//     });
-// };
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
 let refPost;
-
+let totalLikes = 0;
 const init = () => {
   // sharePost.addEventListener('click', sendPostToFirebase);
   refPost = firebase.database().ref().child('posts');
@@ -35,17 +18,24 @@ const createNewPostElement = (postString, creatorString) => {
   const editArea = document.createElement('textarea');
   const editButton = document.createElement('button');
   const deleteButton = document.createElement('button');
+  const likesButton = document.createElement('button');
+  const numberLikes = document.createElement('p');
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
-  editArea.className = 'hide';
+  editArea.className = 'hide'; // Hide
   author.className = 'postName'; // Quitar camel case
+  paragraph.className = 'editMode';
 
   // Asignación de texto y clase a botones
   editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
   editButton.className = 'edit';
   deleteButton.innerHTML = '<span class="glyphicon glyphicon-trash"></span> Borrar';
   deleteButton.className = 'delete';
+  likesButton.innerHTML = '<i class="fas fa-arrow-alt-circle-up"></i>Like';
+  likesButton.className = 'likes';
+  numberLikes.className = 'number-likes';
+  numberLikes.innerHTML = totalLikes;
   author.innerHTML = `${creatorString} <hr>`;
   paragraph.innerHTML = postString;
 
@@ -55,6 +45,8 @@ const createNewPostElement = (postString, creatorString) => {
   listItem.appendChild(editArea);
   listItem.appendChild(editButton);
   listItem.appendChild(deleteButton);
+  listItem.appendChild(likesButton);
+  listItem.appendChild(numberLikes);
 
   // console.log(listItem);
   return listItem;
@@ -74,9 +66,53 @@ const bindPostEvents = (postListItem) => {
   // console.log(postListItem);
   const editButton = postListItem.querySelector('button.edit');
   const deleteButton = postListItem.querySelector('button.delete');
+  const likesButton = postListItem.querySelector('button.likes');
 
+  likesButton.addEventListener('click', likeCounter);
   deleteButton.addEventListener('click', deletePost);
+  editButton.addEventListener('click', editPost);
 };
+
+const editPost = () => {
+  const listItem = event.target.parentNode;
+  let originTxt = listItem.querySelector('textarea');
+  const keyListItem = event.target.parentNode.dataset.keypost;
+  const areaEdit = listItem.querySelector('p[class= editMode]');
+  const editButton = event.target;
+  const containsClass = listItem.classList.contains('editMode');
+
+  const refPostToEdit = refPost.child(keyListItem);
+  
+  refPostToEdit.once('value', (snapshot)=>{
+    const dataPost = snapshot.val();
+    // console.log(dataPost);
+    
+
+    if (containsClass) {
+      console.log(containsClass, listItem);
+      
+      // console.log(areaEdit.value);
+      refPostToEdit.update({
+        text: originTxt.value
+      });  
+      editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
+      originTxt.classList.add('hide');
+
+      areaEdit.value = '';
+      areaEdit.innerHTML = originTxt.value;
+    
+      listItem.classList.remove('editMode');
+    } else {
+      // console.log(containsClass, listItem);
+      editButton.innerHTML = '<span class="glyphicon glyphicon-floppy-disk"></span> Guardar';
+      originTxt.value = dataPost.text;
+      
+      originTxt.classList.remove('hide');
+      listItem.classList.add('editMode');
+    }
+  });
+};
+
 
 const deletePost = () => {
   // console.log(event.target.parentNode);
@@ -91,15 +127,36 @@ const deletePost = () => {
 const getPostOfFirebase = () => {
   // console.log('holi');
   refPost.on('value', (snapshot) => {
-    postList.innerHTML = '';
+    postList.innerHTML = '<h3> Estas son las publicaciones:</h3>';
     const dataPost = snapshot.val();
-    console.log(dataPost);
+    // console.log(dataPost);
     for (let key in dataPost) {
       // console.log(dataPost[key]);
-      addPost(key, dataPost[key]);
+      addPost(key, dataPost[key]);  
+    }
+    console.log(dataPost);
+  });
+};
+const likeCounter = () => {
+  let numberLikes = document.getElementsByClassName('number-likes');
+  totalLikes += 
+  numberLikes.innerHTML = totalLikes;
+  refPost.on('value', (snapshot) => {
+    const dataLikes = snapshot.val();
+    console.log(dataLikes);
+  
+    for (let key in dataLikes) {
+      addPost(key, dataLikes[key]);
     }
   });
+  // console.log(numberLikes);
+  // console.log(totalLikes);
+  // const numberLikes = document.getElementsByClassName('number-likes');
+  // numberLikes.innerHTML = totalLikes;
+  // let starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+  // starCountRef.on('value', function(snapshot) {
+  //   updateStarCount(postElement, snapshot.val());
+  // });
 };
 
 window.onload = init;
-

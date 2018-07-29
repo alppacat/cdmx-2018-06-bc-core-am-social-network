@@ -1,16 +1,16 @@
+// PRINT POST SECTION
+
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
 let refPost;
 
 const init = () => {
-  // sharePost.addEventListener('click', sendPostToFirebase);
   refPost = firebase.database().ref().child('posts');
   getPostOfFirebase();
 };
 
 const createNewPostElement = (postString, creatorString) => {
-  // console.log('holi create');
   // Crea los elementos que aparecen en el DOM
   const listItem = document.createElement('div');
   const author = document.createElement('p');
@@ -117,7 +117,7 @@ const deletePost = () => {
 const getPostOfFirebase = () => {
   // console.log('holi');
   refPost.on('value', (snapshot) => {
-    postList.innerHTML = '';
+    postList.innerHTML = '<h3>Estos son las publicaciones:</h3>';
     const dataPost = snapshot.val();
     // console.log(dataPost);
     for (let key in dataPost) {

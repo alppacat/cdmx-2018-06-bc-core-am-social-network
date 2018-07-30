@@ -2,12 +2,12 @@ let appFirebase = {};
 (function() {
   // Initialize Firebase
   const config = {
-    apiKey: 'AIzaSyA3Ge1u0csSTZWKqDdA2phxdNt8GdHOzXs',
-    authDomain: 'refactoring-social-network.firebaseapp.com',
-    databaseURL: 'https://refactoring-social-network.firebaseio.com',
-    projectId: 'refactoring-social-network',
-    storageBucket: 'refactoring-social-network.appspot.com',
-    messagingSenderId: '1008705429522'
+    apiKey: 'AIzaSyC20SbyxB9RKJgcfTvfYuhJKxuuxh0RQBQ',
+    authDomain: 'prueba-firebase-ef04b.firebaseapp.com',
+    databaseURL: 'https://prueba-firebase-ef04b.firebaseio.com',
+    projectId: 'prueba-firebase-ef04b',
+    storageBucket: 'prueba-firebase-ef04b.appspot.com',
+    messagingSenderId: '499846254860'
   };
   firebase.initializeApp(config);
   appFirebase = firebase;

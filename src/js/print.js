@@ -1,5 +1,3 @@
-// PRINT POST SECTION
-
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
@@ -23,8 +21,8 @@ const createNewPostElement = (postString, creatorString, showLikes) => {
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
-  editArea.className = 'hide'; // Hide
-  author.className = 'postName'; // Quitar camel case
+  editArea.className = 'hide';
+  author.className = 'post-name'; // Quitar camel case
   paragraph.className = 'editMode';
 
   // Asignación de texto y clase a botones
@@ -58,7 +56,6 @@ const addPost = (key, postCollection) => {
 };
 
 const bindPostEvents = (postListItem) => {
-  // console.log(postListItem);
   const editButton = postListItem.querySelector('button.edit');
   const deleteButton = postListItem.querySelector('button.delete');
   const likesButton = postListItem.querySelector('button.likes');

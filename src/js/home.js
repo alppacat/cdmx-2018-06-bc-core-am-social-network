@@ -1,44 +1,42 @@
-(function() {
-  // Get a reference to the database service
-  let database = firebase.database();
+// Get a reference to the database service
+let database = firebase.database();
 
-  firebase.auth().onAuthStateChanged(firebaseUser => {
-    // if (firebaseUser) {
-    console.log(firebaseUser);
-    let user = firebase.auth().currentUser;
-    if (user !== null) {
-      // let emailId = user.email;
-      user.updateProfile({
-        displayName: user.displayName
-      });
-      document.getElementById('welcome').innerHTML = `Bienvenid@ ${user.displayName} <span class="caret"></span>`;
-      document.getElementById('user-name').innerHTML = `${user.displayName}`;
-      const userPhoto = user.photoURL;
-      if (userPhoto) {
-        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" id="avatar">`;
-        console.log(document.getElementById('profile-image'));
-        // document.getElementById('avatar').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
-      } else {
-        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" id="avatar">`;
-      }
-      document.getElementById('user-email').innerHTML = `${user.email}`;
-      console.log(user.photoURL);
-    } else {
-      console.log('not logged in');
-    }
-    let id = user.uid;
-    userConect = database.ref('users/' + id);
-    addUser(user.displayName, user.email, user.photoURL);
-  });
-
-  addUser = (name, email, photo) => {
-    let conect = userConect.push({
-      name: name,
-      email: email,
-      photo: photo
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  // if (firebaseUser) {
+  console.log(firebaseUser);
+  let user = firebase.auth().currentUser;
+  if (user !== null) {
+    // let emailId = user.email;
+    user.updateProfile({
+      displayName: user.displayName
     });
-  };
-}());
+    document.getElementById('welcome').innerHTML = `Bienvenid@ ${user.displayName} <span class="caret"></span>`;
+    document.getElementById('user-name').innerHTML = `${user.displayName}`;
+    const userPhoto = user.photoURL;
+    if (userPhoto) {
+      document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" id="avatar">`;
+      console.log(document.getElementById('profile-image'));
+      // document.getElementById('avatar').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
+    } else {
+      document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" id="avatar">`;
+    }
+    document.getElementById('user-email').innerHTML = `${user.email}`;
+    console.log(user.photoURL);
+  } else {
+    console.log('not logged in');
+  }
+  let id = user.uid;
+  userConect = database.ref('users/' + id);
+  addUser(user.displayName, user.email, user.photoURL);
+});
+
+addUser = (name, email, photo) => {
+  let conect = userConect.push({
+    name: name,
+    email: email,
+    photo: photo
+  });
+};
 
 const postText = document.getElementById('post-entry');
 const btnShare = document.getElementById('new-post');

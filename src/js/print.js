@@ -1,5 +1,3 @@
-// PRINT POST SECTION
-
 const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
@@ -21,12 +19,12 @@ const createNewPostElement = (postString, creatorString, showLikes, datePost) =>
   const likesButton = document.createElement('button');
   const numberLikes = document.createElement('p');
   const time = datePost; // Get the time in miliseconds from post data
-  const timeToDate = new Date(time).toUTCString(); // Convert the time to string in format UTC
+  const timeToDate = new Date(time); // Convert the time to string in format UTC
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
-  editArea.className = 'hide'; // Hide
-  author.className = 'postName'; // Quitar camel case
+  editArea.className = 'hide';
+  author.className = 'post-name'; // Quitar camel case
   paragraph.className = 'editMode';
   date.className = 'dateString';
 

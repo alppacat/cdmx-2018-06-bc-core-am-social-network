@@ -1,38 +1,36 @@
-(function() {
-  // Get a reference to the database service
-  let database = firebase.database();
+// Get a reference to the database service
+let database = firebase.database();
 
-  firebase.auth().onAuthStateChanged(firebaseUser => {
-    let user = firebase.auth().currentUser;
-    if (user !== null) {
-      user.updateProfile({
-        displayName: user.displayName
-      });
-      document.getElementById('welcome').innerHTML = `Bienvenid@ ${user.displayName} <span class="caret"></span>`;
-      document.getElementById('user-name').innerHTML = `${user.displayName}`;
-      const userPhoto = user.photoURL;
-      if (userPhoto) {
-        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" id="avatar">`;
-      } else {
-        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" id="avatar">`;
-      }
-      document.getElementById('user-email').innerHTML = `${user.email}`;
-    } else {
-      console.log('not logged in');
-    }
-    let id = user.uid;
-    userConect = database.ref('users/' + id);
-    addUser(user.displayName, user.email, user.photoURL);
-  });
-
-  addUser = (name, email, photo) => {
-    let conect = userConect.push({
-      name: name,
-      email: email,
-      photo: photo
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  let user = firebase.auth().currentUser;
+  if (user !== null) {
+    user.updateProfile({
+      displayName: user.displayName
     });
-  };
-}());
+    document.getElementById('welcome').innerHTML = `Bienvenid@ ${user.displayName} <span class="caret"></span>`;
+    document.getElementById('user-name').innerHTML = `${user.displayName}`;
+    const userPhoto = user.photoURL;
+    if (userPhoto) {
+      document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" id="avatar">`;
+    } else {
+      document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" id="avatar">`;
+    }
+    document.getElementById('user-email').innerHTML = `${user.email}`;
+  } else {
+    console.log('not logged in');
+  }
+  let id = user.uid;
+  userConect = database.ref('users/' + id);
+  addUser(user.displayName, user.email, user.photoURL);
+});
+
+addUser = (name, email, photo) => {
+  let conect = userConect.push({
+    name: name,
+    email: email,
+    photo: photo
+  });
+};
 
 // SHARE A NEW POST FUNCTION
 // Get elements

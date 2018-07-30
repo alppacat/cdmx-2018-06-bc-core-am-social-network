@@ -26,7 +26,7 @@ Como primera aproximación a la opinión pública, se decidió usar la modalidad
 	* ¿Usarías una red social enfocada en generar redes de apoyo para personas con depresión y ansiedad?
 	* ¿Por qué?
 
-# Análsisi preliminar de las encuestas
+# Análisis preliminar de las encuestas
 Si deseas ver las gráficas, sigue el enlace:
 https://ibb.co/album/gozdyv <br>
 Se logró obtener un total de 39 participantes de las cuales 27 se identifican con el género femenino y el restante con el masculino.

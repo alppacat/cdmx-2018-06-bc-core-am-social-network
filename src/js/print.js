@@ -20,6 +20,7 @@ const createNewPostElement = (postString, creatorString, showLikes) => {
   const likesButton = document.createElement('button');
   const numberLikes = document.createElement('p');
 
+
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
   editArea.className = 'hide'; // Hide
@@ -102,9 +103,12 @@ const editPost = () => {
 
 
 const deletePost = () => {
-  const keyListItem = event.target.parentNode.dataset.keypost;
-  const refPostToDelete = refPost.child(keyListItem);
-  refPostToDelete.remove();
+  const accept = confirm('¿Quieres borrar este post?');
+  if (accept === true) {
+    const keyListItem = event.target.parentNode.dataset.keypost;
+    const refPostToDelete = refPost.child(keyListItem);
+    refPostToDelete.remove();
+  };
 };
 
 const likeCounter = () => {

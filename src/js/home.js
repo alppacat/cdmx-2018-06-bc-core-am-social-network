@@ -55,12 +55,15 @@ btnShare.addEventListener('click', event => {
     // Create a unique key for messages collection
     const newPostKey = firebase.database().ref().child('posts').push().key;
     console.log(newPostKey);
+    const date = (new Date).getTime();
+    console.log(date);
         
     firebase.database().ref(`posts/${newPostKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
       text: textInPost,
-      likes: 0
+      likes: 0,
+      postDate: date
     });
   };
 });

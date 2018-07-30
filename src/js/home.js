@@ -1,14 +1,6 @@
 (function() {
-  // Get elements
-  const btnLogout = document.getElementById('btn-logout');
   // Get a reference to the database service
   let database = firebase.database();
-
-  // Add logout event
-  btnLogout.addEventListener('click', event => {
-    firebase.auth().signOut();
-    window.location.assign('../index.html');
-  });
 
   firebase.auth().onAuthStateChanged(firebaseUser => {
     // if (firebaseUser) {
@@ -19,12 +11,15 @@
       user.updateProfile({
         displayName: user.displayName
       });
-      document.getElementById('user-paragraph').innerHTML = `Bienvenidx ${user.displayName}`;
+      document.getElementById('welcome').innerHTML = `Bienvenid@ ${user.displayName} <span class="caret"></span>`;
+      document.getElementById('user-name').innerHTML = `${user.displayName}`;
       const userPhoto = user.photoURL;
       if (userPhoto) {
-        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${user.photoURL}" id="avatar">`;
+        console.log(document.getElementById('profile-image'));
+        // document.getElementById('avatar').innerHTML = `<img src="${user.photoURL}" class="avatar">`;
       } else {
-        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" class="avatar">`;
+        document.getElementById('profile-image').innerHTML = `<img src="${'../images/placeholder-user.png'}" id="avatar">`;
       }
       document.getElementById('user-email').innerHTML = `${user.email}`;
       console.log(user.photoURL);
@@ -59,10 +54,25 @@ btnShare.addEventListener('click', event => {
     postText.value = '';
     // Create a unique key for messages collection
     const newPostKey = firebase.database().ref().child('posts').push().key;
+    console.log(newPostKey);
+        
     firebase.database().ref(`posts/${newPostKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
-      text: textInPost
+      text: textInPost,
+      likes: 0
     });
   };
 });
+// LOG-OUT FUNCTION
+
+// Get elements
+const btnLogout = document.getElementById('button-logout');
+
+// Add logout event
+btnLogout.addEventListener('click', event => {
+  console.log('entro');
+  firebase.auth().signOut();
+  window.location.assign('../index.html');
+});
+

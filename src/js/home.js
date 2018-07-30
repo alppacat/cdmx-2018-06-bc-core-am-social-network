@@ -66,7 +66,7 @@ btnShare.addEventListener('click', event => {
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
       text: textInPost,
-      likes: totalLikes
+      likes: 0
     });
   };
 });

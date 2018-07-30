@@ -2,15 +2,12 @@ const postEntry = document.getElementById('post-entry');
 const sharePost = document.getElementById('new-post');
 const postList = document.getElementById('new-posts');
 let refPost;
-let totalLikes = 0;
 const init = () => {
-  // sharePost.addEventListener('click', sendPostToFirebase);
   refPost = firebase.database().ref().child('posts');
   getPostOfFirebase();
 };
 
-const createNewPostElement = (postString, creatorString) => {
-  // console.log('holi create');
+const createNewPostElement = (postString, creatorString, showLikes) => {
   // Crea los elementos que aparecen en el DOM
   const listItem = document.createElement('div');
   const author = document.createElement('p');
@@ -32,10 +29,10 @@ const createNewPostElement = (postString, creatorString) => {
   editButton.className = 'edit';
   deleteButton.innerHTML = '<span class="glyphicon glyphicon-trash"></span> Borrar';
   deleteButton.className = 'delete';
-  likesButton.innerHTML = '<i class="fas fa-arrow-alt-circle-up"></i>Like';
+  likesButton.innerHTML = '<span class="glyphicon glyphicon-heart"></span> Me gusta';
   likesButton.className = 'likes';
   numberLikes.className = 'number-likes';
-  numberLikes.innerHTML = totalLikes;
+  numberLikes.innerHTML = showLikes;
   author.innerHTML = `${creatorString} <hr>`;
   paragraph.innerHTML = postString;
 
@@ -47,16 +44,11 @@ const createNewPostElement = (postString, creatorString) => {
   listItem.appendChild(deleteButton);
   listItem.appendChild(likesButton);
   listItem.appendChild(numberLikes);
-
-  // console.log(listItem);
   return listItem;
 };
 
 const addPost = (key, postCollection) => {
-  // console.log('holi addPost');
-  // console.log(postCollection.text, postCollection.creatorName);
-  const listItem = createNewPostElement(postCollection.text, postCollection.creatorName);
-  // console.log(listItem);
+  const listItem = createNewPostElement(postCollection.text, postCollection.creatorName, postCollection.likes);
   listItem.setAttribute('data-keypost', key);
   postList.appendChild(listItem);
   bindPostEvents(listItem);
@@ -67,7 +59,6 @@ const bindPostEvents = (postListItem) => {
   const editButton = postListItem.querySelector('button.edit');
   const deleteButton = postListItem.querySelector('button.delete');
   const likesButton = postListItem.querySelector('button.likes');
-
   likesButton.addEventListener('click', likeCounter);
   deleteButton.addEventListener('click', deletePost);
   editButton.addEventListener('click', editPost);
@@ -85,13 +76,8 @@ const editPost = () => {
   
   refPostToEdit.once('value', (snapshot)=>{
     const dataPost = snapshot.val();
-    // console.log(dataPost);
-    
-
     if (containsClass) {
       console.log(containsClass, listItem);
-      
-      // console.log(areaEdit.value);
       refPostToEdit.update({
         text: originTxt.value
       });  
@@ -103,7 +89,6 @@ const editPost = () => {
     
       listItem.classList.remove('editMode');
     } else {
-      // console.log(containsClass, listItem);
       editButton.innerHTML = '<span class="glyphicon glyphicon-floppy-disk"></span> Guardar';
       originTxt.value = dataPost.text;
       
@@ -115,48 +100,41 @@ const editPost = () => {
 
 
 const deletePost = () => {
-  // console.log(event.target.parentNode);
-  // console.log(event.target.parentNode.dataset.keypost);
   const keyListItem = event.target.parentNode.dataset.keypost;
   const refPostToDelete = refPost.child(keyListItem);
-  // const refUID = refPost.child(keyListItem).child(creator);
-  // console.log(refUID);
   refPostToDelete.remove();
 };
 
+const likeCounter = () => {
+  let totalLikes;
+  const listItem = event.target.parentNode;
+  console.log(listItem);
+  let newLikes = listItem.querySelector('p[class=number-likes]');
+  console.log(newLikes);
+  const keyListItem = event.target.parentNode.dataset.keypost;
+
+  const refPostToLike = refPost.child(keyListItem);
+  
+  refPostToLike.once('value', (snapshot) => {
+    const dataPost = snapshot.val();
+    totalLikes = dataPost.likes;
+    refPostToLike.update({
+      likes: totalLikes + 1
+    });
+    newLikes.value = dataPost.likes;
+  });
+};
+
 const getPostOfFirebase = () => {
-  // console.log('holi');
   refPost.on('value', (snapshot) => {
     postList.innerHTML = '<h3> Estas son las publicaciones:</h3>';
     const dataPost = snapshot.val();
-    // console.log(dataPost);
     for (let key in dataPost) {
-      // console.log(dataPost[key]);
       addPost(key, dataPost[key]);  
     }
     console.log(dataPost);
   });
 };
-const likeCounter = () => {
-  let numberLikes = document.getElementsByClassName('number-likes');
-  totalLikes += 
-  numberLikes.innerHTML = totalLikes;
-  refPost.on('value', (snapshot) => {
-    const dataLikes = snapshot.val();
-    console.log(dataLikes);
-  
-    for (let key in dataLikes) {
-      addPost(key, dataLikes[key]);
-    }
-  });
-  // console.log(numberLikes);
-  // console.log(totalLikes);
-  // const numberLikes = document.getElementsByClassName('number-likes');
-  // numberLikes.innerHTML = totalLikes;
-  // let starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-  // starCountRef.on('value', function(snapshot) {
-  //   updateStarCount(postElement, snapshot.val());
-  // });
-};
+
 
 window.onload = init;

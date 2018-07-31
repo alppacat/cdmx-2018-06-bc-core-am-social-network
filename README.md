@@ -1,4 +1,20 @@
-# El papel de las redes sociales de apoyo en la prevención de la depresión y ansiedad.
+# Lux
+## Ilumina tu día a día con nosotros
+
+De acuerdo con Nicholas A Christakis (2010) el uso de internet nos ha facilitado nuevas formas sociales que introducen cuatro modificaciones radicales en los tipos de redes de interacción social existentes hasta ahora:
+* Enormidad: la vasta magnitud de nuestras redes y del número de personas a las que se puede llegar.
+* Comunalidad: una ampliación de la escala en la que podemos compartir información y contribuir a esfuerzos colectivos.
+* Especificidad: un impresionante incremento en la particularidad de los vínculos que podemos formar.
+* Virtualidad: La capacidad de asumir identidades virtuales.
+
+Las redes sociales _virtuales_ nos ofrecen nuevas oportidades para facilitar el mantenimiento de vínculos y conexiones entre las personas.
+> Los portales de redes sociales se utilizan para seguir los pasos de amigos y parientes reales, por supuesto, pero la mayoría de la gente mantiene conexiones virtuales con personas, [...] con las que no podrían no sentirse cómodas charlando en un bar.
+
+En esencia los servicios de redes sociales fundamentalmente reflejan interacciones reales, no virtuales, es decir, todo tipo de aplicaciones y plataformas que integran al usuario en el proceso de producción y consumo de contenidos que permiten establecer un diálogo social y mediático. 
+<br> Teniendo en cuenta la estructura y la funcionalidad de las redes sociales (virtuales y no virtuales) y la importancia en el mundo digital así como fuera de este, podemos encontrar un  beneficio en el uso adecuado y enfocándose en las necesidades o carencias de cierto sector social.
+<br>A partir de una experiencia propia así como un análisis (que se mencionará a continuación) se decidió implementar una red social de apoyo emocional en donde se hará uso de un mecanismo de refuerzo positivo para las personas que  puedan llegar a necesitarla.
+
+### El papel de las redes sociales de apoyo en la prevención de la depresión y ansiedad.
 La depresión es una enfermedad frecuente en todo el mundo, y se calcula que afecta a más de 300  millones de personas. Cada año se suicidan cerca de 800,000 personas, y el suicidio es la segunda causa de muerte en el grupo etario de 15 a 29 años.
 >Aunque hay tratamientos eficaces para la depresión, más de la mitad de los afectados en todo el mundo, y más del 90% en muchos países, no recibe la atención adecuada. Entre los obstáculos principales que impiden una atención eficaz se encuentran la falta de recursos y de personal sanitario capacitados, además de la estigmatización de los trastornos mentales y la evaluación clínica inexacta. Otra barrera para la atención eficaz es la evaluación errónea. En países de todo tipo de ingresos, las personas con depresión a menudo no son correctamente diagnosticadas, mientras que otras que en realidad no la padecen son a menudo diagnosticadas erróneamente y tratadas con antidepresivos.
 
@@ -7,9 +23,10 @@ A ellos les siguen Ecuador con 4,6 por ciento; Bolivia, El Salvador y Panamá co
 
 
 
-Acorde con la OMS, la depresión es el resultado de interacciones complejas entre factores sociales, psicológicos y biológicos. Aquellas personas que han pasado por circunstancias adversas como el desempleo, luto o traumatismos psicológicos tienden a tener más probabilidades de sufrir depresión y esta a su vez, puede generar más estrés y disfunción, empeorar la situación vital de la persona afectada y, por consiguiente, la propia depresión.En México, según Corina Benjet, investigadora del Instituto Nacional de Psiquiatría Ramón de la Fuente Muñiz (INPRFM) la población más vulnerable son jóvenes entre el rango de 15 y 24 años de edad.En este contexto la existencia de redes de apoyo para una persona es vital ya que previene la exclusión social además de mejorar la salud tanto física como mental fortaleciendo el bienestar general de la persona. Sin embargo, tener o contar con estas puede ser difícil, especialmente si se está pasando por un periodo de crisis. <br> **Una de nuestras metas creando Lux, es generar un espacio seguro para las personas que están pasando por problemas similares en donde puedan encontrar una red de apoyo en la cual expresarse y sostenerse a través de la auto ayuda y la ayuda mutua.** 
+Acorde con la OMS, la depresión es el resultado de interacciones complejas entre factores sociales, psicológicos y biológicos. Aquellas personas que han pasado por circunstancias adversas como el desempleo, luto o traumatismos psicológicos tienden a tener más probabilidades de sufrir depresión y esta a su vez, puede generar más estrés y disfunción, empeorar la situación vital de la persona afectada y, por consiguiente, la propia depresión.En México, según Corina Benjet, investigadora del Instituto Nacional de Psiquiatría Ramón de la Fuente Muñiz (INPRFM) la población más vulnerable son jóvenes entre el rango de 15 y 24 años de edad.En este contexto la existencia de redes de apoyo para una persona es vital ya que previene la exclusión social además de mejorar la salud tanto física como mental fortaleciendo el bienestar general de la persona. Sin embargo, tener o contar con estas puede ser difícil, especialmente si se está pasando por un periodo de crisis. <br> 
+>**Una de nuestras metas creando Lux, es generar un espacio seguro para las personas que están pasando por problemas similares en donde puedan encontrar una red de apoyo en la cual expresarse y sostenerse a través de la auto ayuda y la ayuda mutua.** 
 
-## Conocer para hacer
+## Observar y conocer para empezar a actuar
 Como primera aproximación a la opinión pública, se decidió usar la modalidad de método de encuesta no estructurada en forma de cuestionario para la recopilación de datos en la creación y el uso de una red social enfocada a generar redes de apoyo para gente que padece o sufre depresión y/o ansiedad.Dicha encuesta fue publicada en grupos cuyo propósito es la ayuda a gente con depresión y/o ansiedad, sin embargo, el nivel de actividad dentro de estas comunidades en Facebook y foros en internet no es tan grande o caen casi en el abandono.También se publicó en redes como Slack y se pidió a familiares así como amigos cercanos y contactos que contestaran la encuesta.Las preguntas realizadas en la encuesta fueron las siguientes:
 
 	* ¿Cuál es tu edad?
@@ -89,13 +106,18 @@ F) Yo como usuarix de LUX quiero poder ver primero los post más recientes para 
 
 G) Yo como usuarix de LUX quiero poder cerrar mi sesión para que mi actividad dentro de la plataforma se mantenga privada.
 
-# Benchmark 1.0
+## #BuildALadder
+> This method of actively uplifting yourself, doing what little things you can every day but allowing yourself to be sad other days when you need it most, might be one of the most important things you can tell anyone who suffers from depression, chronically or otherwise.
+
+Tomamos como referencia el concepto (así como el hashtag) de #BuildALadder, en donde principalmente se celebran los logros personales de las personas que sufren de depresión sin importar el tamaño de estos. Con el uso de este hashtag se comparten experiencias así como ideas positivas para mejorar paso a paso y también distintas formas de de lidiar y afrontar los problemas.
+
+## Benchmark 1.0
 
 En conjunto con la elaboración de encuentas y su análisis preliminar, se empezó a trabajar en un Benchmark para permitirnos analizar tanto los sitios web como las aplicaciones móviles con la que se compartía una visión similar.
 
 Enlace del benchmark 1.0: https://ibb.co/album/c89HrF
 
-# Benchmark 2.0
+## Benchmark 2.0
  Acorde al feedback recibido de UX Coach Karla Nava decidimos implementar cambios en cunato a la estructura del benchmark 1.0, estos constaron en: 
  - Reestructuracion de tabla.
  - Jerarquia en contenido
@@ -152,6 +174,10 @@ Algunas palabras asociadas con este color son: Balance, claridad, creatividad, a
 
 Todo esto se alinea con el mensaje que queremos transmitir a lxs usuarixs al usar la página web.
 
+#### Bibliografía
+Nicholas A. Christakis y James H. Fowler, _"Conectados"_, 2010, Santillana Ediciones Generales.
+Rivera de Javier, "Socialización Tecnológica", http://sociologiayredessociales.com/textos/SocializacionTecnologica-JavierdeRivera.pdf , Recuperado el 28 de Julio de 2018.
+Rivera de Javier, "Un análisis sociológico del Me gusta" , https://ssociologos.com/2015/11/09/un-analisis-sociologico-del-me-gusta/ Recuperado el 30 de Julio de 2018
 # Lux
 
 Nuestra aplicación tiene como objetivo princial la creación de espacios seguros así como redes de apoyo emocional para personas que padeceden y/o sufren de depresión y/o ansiedad.

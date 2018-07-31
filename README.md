@@ -115,7 +115,7 @@ G) Yo como usuarix de LUX quiero poder cerrar mi sesión para que mi actividad d
 ## #BuildALadder
 > This method of actively uplifting yourself, doing what little things you can every day but allowing yourself to be sad other days when you need it most, might be one of the most important things you can tell anyone who suffers from depression, chronically or otherwise.
 
-Tomamos como referencia el concepto (así como el hashtag) de #BuildALadder, en donde principalmente se celebran los logros personales de las personas que sufren de depresión sin importar el tamaño de estos. Con el uso de este hashtag se comparten experiencias así como ideas positivas para mejorar paso a paso y también distintas formas de de lidiar y afrontar los problemas.
+Tomamos como referencia el concepto (así como el hashtag) de #BuildALadder, en donde principalmente se celebran los logros personales de quienes sufren de depresión sin importar el tamaño de estos. Con el uso de este hashtag se comparten experiencias así como ideas positivas para mejorar paso a paso y también distintas formas de de lidiar y afrontar los problemas.
 
 
 ## Benchmark 1.0
@@ -184,6 +184,25 @@ Todo esto se alinea con el mensaje que queremos transmitir a lxs usuarixs al usa
 ## Mobile First
 El proceso del diseño de nuestra red social fue pensada desde el inicio para visualizarse principalmente en los dispositivos más pequeños, sin embargo, la adaptabilidad en dispositivos grandes, como un ordenador es completamente posible y amigable para el usuario.
 <br>La decisión fue tomada debido a que el acceso a las redes sociales es principalmente a través de dispositvos móbiles gracias al fácil acceso que estos nos brindan.
+
+# User Testing
+<img src="src/images/test1.jpeg" alt="User testing">
+Para visualizar el resto de las imágenes: 
+
+Con intención de recibir feedback general de nuestros usuarios potenciales realizamos pruebas con ellos. El primer user testing realizado contó con la participación de 5 personas,  de este se tomaron en cuenta las siguientes observaciones:
+
+* Visualmente, no se sentían atraídos a la aplicación ya que el diseño era demasiado sencillo y aburrido.
+
+* En cuanto al entendimiento de la utilidad que la aplicación podría brindarles a los usuarios estos se sentían confusos ya que no existía una guía de uso o algo que pudiera guiarlos.
+
+Gracias al feedback recibido se pudo trabajar en el desarrollo de una segunda versión en donde se lograron mejorar los aspectos mencionados.
+
+<img src="src/images/test2.jpeg" alt="User Testing">
+
+La segunda prueba con nuestros usarios resultó en un feedback más favorable para nosotras, ya que los usuarios encontraban que la navegación era sencilla y más amigable.
+Visualmente las opiniones fueron totalmente positivas y se mostraban interesados en el uso de la aplicación y las indicaciones no eran necesarias para el uso de esta ya que contaba con un flujo intuituvo. 
+
+<img src="src/images/test7.jpeg" alt="User Testing">
 
 
 #### Referencias

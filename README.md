@@ -172,8 +172,8 @@ Después de elegir el nombre que nos representaría, decidimos dar el siguiente 
 
 # Color
 
-El color no sólo es sensación, sino que básica y principalmente es emoción por ello se elige una paleta basada en la gama de los  
-azules.
+El color no sólo es sensación, sino que básica y principalmente es emoción por ello se elige una paleta basada en la gama de los azules.
+
 El azul es el color del espacio, de la lejanía y del infinito. En publicidad se le relaciona con la limpieza y la frescura. Es un color que simboliza ideas de tranquilidad, afecto, frío e inteligencia. 
 
 Existen estudios psicologicos que indican que los colores dentro de la gama de los azules nos permiten desahogarnos, transmite una sensación de calma y ayuda a pensar en la situación más ideal.

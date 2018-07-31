@@ -117,6 +117,7 @@ G) Yo como usuarix de LUX quiero poder cerrar mi sesión para que mi actividad d
 
 Tomamos como referencia el concepto (así como el hashtag) de #BuildALadder, en donde principalmente se celebran los logros personales de las personas que sufren de depresión sin importar el tamaño de estos. Con el uso de este hashtag se comparten experiencias así como ideas positivas para mejorar paso a paso y también distintas formas de de lidiar y afrontar los problemas.
 
+
 ## Benchmark 1.0
 
 En conjunto con la elaboración de encuentas y su análisis preliminar, se empezó a trabajar en un Benchmark para permitirnos analizar tanto los sitios web como las aplicaciones móviles con la que se compartía una visión similar.
@@ -182,7 +183,13 @@ Algunas palabras asociadas con este color son: Balance, claridad, creatividad, a
 
 Todo esto se alinea con el mensaje que queremos transmitir a los usuarios al usar la página web.
 
-#### Bibliografía
+## Mobile First
+El proceso del diseño de nuestra red social fue pensada desde el inicio para visualizarse principalmente en los dispositivos más pequeños, sin embargo, la adaptabilidad en dispositivos grandes, como un ordenador es completamente posible y amigable para el usuario.
+<br>La decisión fue tomada debido a que el acceso a las redes sociales es principalmente a través de dispositvos móbiles gracias al fácil acceso que estos nos brindan.
+
+
+#### Referencias
+
 Nicholas A. Christakis y James H. Fowler, _"Conectados"_, 2010, Santillana Ediciones Generales.
 Rivera de Javier, "Socialización Tecnológica", http://sociologiayredessociales.com/textos/SocializacionTecnologica-JavierdeRivera.pdf , Recuperado el 28 de Julio de 2018.
 Rivera de Javier, "Un análisis sociológico del Me gusta" , https://ssociologos.com/2015/11/09/un-analisis-sociologico-del-me-gusta/ Recuperado el 30 de Julio de 2018

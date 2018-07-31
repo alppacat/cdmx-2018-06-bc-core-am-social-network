@@ -73,6 +73,12 @@ También es importante resaltar que los encuestados se encontraron interesados e
 
 >“Me gustaría poder hacer amigos, que compartan tips y que promocionen eventos o recomiendes sitios donde relajarse; así como crear grupos”.
 
+# Proto-personas
+Despues de recopilar, analizar la información y obtener la primera aproximacion a las necesidades y los objetivos determinamos dos prototipos de personas:
+
+<img src="sketch/proto-femenino.jpg" alt="femproto">
+<img src="sketch/proto-masculino.jpg" alt="masproto">
+
 # Historias de usuario 
 ## Login
 A) Yo como usuarix con depresión y/o ansiedad quiero poder registrarme en una red social que me permita conectarme con personas que están atravesando o han superado una experiencia similar.

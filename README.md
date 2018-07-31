@@ -172,18 +172,22 @@ Después de elegir el nombre que nos representaría, decidimos dar el siguiente 
 
 # Color
 
-Se eligió una paleta monocromática basada en el color turquesa ya que en la psicología del color se cree que este tonalidad ayuda a abrir líneas de comunicación, transmite confianza y estabilidad.
+El color no sólo es sensación, sino que básica y principalmente es emoción por ello se elige una paleta basada en la gama de los azules.
 
-También hay estudios que indican que los colores dentro de la gama de los azules nos permiten desahogarnos, transmite una sensación de calma y ayuda a pensar en la situación más ideal.
+El azul es el color del espacio, de la lejanía y del infinito. En publicidad se le relaciona con la limpieza y la frescura. Es un color que simboliza ideas de tranquilidad, afecto, frío e inteligencia. 
+
+Existen estudios psicologicos que indican que los colores dentro de la gama de los azules nos permiten desahogarnos, transmite una sensación de calma y ayuda a pensar en la situación más ideal.
 
 Algunas palabras asociadas con este color son: Balance, claridad, creatividad, autosuficiencia.
 
-Todo esto se alinea con el mensaje que queremos transmitir a lxs usuarixs al usar la página web.
+Todo esto se alinea con el mensaje que queremos transmitir a los usuarios al usar la página web.
 
 #### Bibliografía
 Nicholas A. Christakis y James H. Fowler, _"Conectados"_, 2010, Santillana Ediciones Generales.
 Rivera de Javier, "Socialización Tecnológica", http://sociologiayredessociales.com/textos/SocializacionTecnologica-JavierdeRivera.pdf , Recuperado el 28 de Julio de 2018.
 Rivera de Javier, "Un análisis sociológico del Me gusta" , https://ssociologos.com/2015/11/09/un-analisis-sociologico-del-me-gusta/ Recuperado el 30 de Julio de 2018
+Paleta de colores Lux, https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=64d8cb&secondary.color=38468c&primary.text.color=333333&secondary.text.color=333333 Recuperado el 31 de Julio de 2018
+
 # Lux
 
 Nuestra aplicación tiene como objetivo princial la creación de espacios seguros así como redes de apoyo emocional para personas que padeceden y/o sufren de depresión y/o ansiedad.

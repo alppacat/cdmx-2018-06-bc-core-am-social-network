@@ -174,6 +174,10 @@ Algunas palabras asociadas con este color son: Balance, claridad, creatividad, a
 
 Todo esto se alinea con el mensaje que queremos transmitir a lxs usuarixs al usar la página web.
 
+#### Bibliografía
+Nicholas A. Christakis y James H. Fowler, _"Conectados"_, 2010, Santillana Ediciones Generales.
+Rivera de Javier, "Socialización Tecnológica", http://sociologiayredessociales.com/textos/SocializacionTecnologica-JavierdeRivera.pdf , Recuperado el 28 de Julio de 2018.
+Rivera de Javier, "Un análisis sociológico del Me gusta" , https://ssociologos.com/2015/11/09/un-analisis-sociologico-del-me-gusta/ Recuperado el 30 de Julio de 2018
 # Lux
 
 Nuestra aplicación tiene como objetivo princial la creación de espacios seguros así como redes de apoyo emocional para personas que padeceden y/o sufren de depresión y/o ansiedad.

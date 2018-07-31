@@ -106,13 +106,18 @@ F) Yo como usuarix de LUX quiero poder ver primero los post más recientes para 
 
 G) Yo como usuarix de LUX quiero poder cerrar mi sesión para que mi actividad dentro de la plataforma se mantenga privada.
 
-# Benchmark 1.0
+## #BuildALadder
+> This method of actively uplifting yourself, doing what little things you can every day but allowing yourself to be sad other days when you need it most, might be one of the most important things you can tell anyone who suffers from depression, chronically or otherwise.
+
+Tomamos como referencia el concepto (así como el hashtag) de #BuildALadder, en donde principalmente se celebran los logros personales de las personas que sufren de depresión sin importar el tamaño de estos. Con el uso de este hashtag se comparten experiencias así como ideas positivas para mejorar paso a paso y también distintas formas de de lidiar y afrontar los problemas.
+
+## Benchmark 1.0
 
 En conjunto con la elaboración de encuentas y su análisis preliminar, se empezó a trabajar en un Benchmark para permitirnos analizar tanto los sitios web como las aplicaciones móviles con la que se compartía una visión similar.
 
 Enlace del benchmark 1.0: https://ibb.co/album/c89HrF
 
-# Benchmark 2.0
+## Benchmark 2.0
  Acorde al feedback recibido de UX Coach Karla Nava decidimos implementar cambios en cunato a la estructura del benchmark 1.0, estos constaron en: 
  - Reestructuracion de tabla.
  - Jerarquia en contenido

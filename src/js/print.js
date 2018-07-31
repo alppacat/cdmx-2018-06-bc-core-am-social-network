@@ -7,23 +7,26 @@ const init = () => {
   getPostOfFirebase();
 };
 
-const createNewPostElement = (postString, creatorString, showLikes) => {
+const createNewPostElement = (postString, creatorString, showLikes, datePost) => {
   // Crea los elementos que aparecen en el DOM
   const listItem = document.createElement('div');
   const author = document.createElement('p');
+  const date = document.createElement('p');
   const paragraph = document.createElement('p');
   const editArea = document.createElement('textarea');
   const editButton = document.createElement('button');
   const deleteButton = document.createElement('button');
   const likesButton = document.createElement('button');
   const numberLikes = document.createElement('p');
-
+  const time = datePost; // Get the time in miliseconds from post data
+  const timeToDate = new Date(time); // Convert the time to string in format UTC
 
   // Asigna clase a la area de texto para editar
   listItem.className = 'postCard';
   editArea.className = 'hide';
   author.className = 'post-name'; // Quitar camel case
   paragraph.className = 'editMode';
+  date.className = 'dateString';
 
   // Asignación de texto y clase a botones
   editButton.innerHTML = '<span class="glyphicon glyphicon-pencil"></span> Editar';
@@ -34,11 +37,13 @@ const createNewPostElement = (postString, creatorString, showLikes) => {
   likesButton.className = 'likes';
   numberLikes.className = 'number-likes';
   numberLikes.innerHTML = showLikes;
-  author.innerHTML = `${creatorString} <hr>`;
+  author.innerHTML = `<span class="glyphicon glyphicon-user"></span> ${creatorString}`;
   paragraph.innerHTML = postString;
+  date.innerHTML = `${timeToDate} <hr>`;
 
   // Añadiendo elementos al DOM
   listItem.appendChild(author);
+  listItem.appendChild(date);
   listItem.appendChild(paragraph);
   listItem.appendChild(editArea);
   listItem.appendChild(editButton);
@@ -49,9 +54,9 @@ const createNewPostElement = (postString, creatorString, showLikes) => {
 };
 
 const addPost = (key, postCollection) => {
-  const listItem = createNewPostElement(postCollection.text, postCollection.creatorName, postCollection.likes);
+  const listItem = createNewPostElement(postCollection.text, postCollection.creatorName, postCollection.likes, postCollection.postDate);
   listItem.setAttribute('data-keypost', key);
-  postList.appendChild(listItem);
+  postList.insertBefore(listItem, postList.childNodes[0]);
   bindPostEvents(listItem);
 };
 
@@ -77,7 +82,6 @@ const editPost = () => {
   refPostToEdit.once('value', (snapshot)=>{
     const dataPost = snapshot.val();
     if (containsClass) {
-      console.log(containsClass, listItem);
       refPostToEdit.update({
         text: originTxt.value
       });  
@@ -111,9 +115,7 @@ const deletePost = () => {
 const likeCounter = () => {
   let totalLikes;
   const listItem = event.target.parentNode;
-  console.log(listItem);
   let newLikes = listItem.querySelector('p[class=number-likes]');
-  console.log(newLikes);
   const keyListItem = event.target.parentNode.dataset.keypost;
 
   const refPostToLike = refPost.child(keyListItem);
@@ -130,12 +132,11 @@ const likeCounter = () => {
 
 const getPostOfFirebase = () => {
   refPost.on('value', (snapshot) => {
-    postList.innerHTML = '<h3> Estas son las publicaciones:</h3>';
+    postList.innerHTML = '';
     const dataPost = snapshot.val();
     for (let key in dataPost) {
       addPost(key, dataPost[key]);  
     }
-    console.log(dataPost);
   });
 };
 

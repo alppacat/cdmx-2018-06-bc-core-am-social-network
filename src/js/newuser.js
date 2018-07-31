@@ -28,7 +28,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         displayName: txtName.value
       });
       window.location.assign('../views/home.html');
-      document.getElementById('user-paragraph').innerHTML = ` Bienvenido ${user.displayName};`;
     }
   } else {
     console.log('not logged in');

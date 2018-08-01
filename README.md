@@ -170,6 +170,11 @@ Después de elegir el nombre que nos representaría, decidimos dar el siguiente 
   <img src="sketch/sketchGeneral2.jpg"  title="Sketch">
 </p>
 
+# Prototipo de alta fidelidad
+
+Se desarrollo un prototipo en Marvel para guiarnos en el desarrollo de la plataforma.
+
+https://marvelapp.com/18aeb046
 
 # Color
 

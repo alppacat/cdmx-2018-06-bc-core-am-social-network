@@ -187,7 +187,7 @@ El proceso del diseño de nuestra red social fue pensada desde el inicio para vi
 
 # User Testing
 <img src="src/images/test1.jpeg" alt="User testing">
-Para visualizar el resto de las imágenes: 
+Para visualizar el resto de las imágenes: https://ibb.co/album/c8oigF
 
 Con intención de recibir feedback general de nuestros usuarios potenciales realizamos pruebas con ellos. El primer user testing realizado contó con la participación de 5 personas,  de este se tomaron en cuenta las siguientes observaciones:
 

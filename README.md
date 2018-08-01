@@ -75,9 +75,12 @@ También es importante resaltar que los encuestados se encontraron interesados e
 
 # Proto-personas
 Despues de recopilar, analizar la información y obtener la primera aproximacion a las necesidades y los objetivos determinamos dos prototipos de personas:
-
-<img src="sketch/proto-femenino.jpg" alt="femproto">
-<img src="sketch/proto-masculino.jpg" alt="masproto">
+<p align="center">
+ <img src="sketch/proto-femenino.jpg" alt="femproto"> 
+</p>
+<p align="center">
+  <img src="sketch/proto-masculino.jpg" alt="masproto">
+</p>
 
 # Historias de usuario 
 ## Login
@@ -169,6 +172,18 @@ Después de elegir el nombre que nos representaría, decidimos dar el siguiente 
 <p align="center">
   <img src="sketch/sketchGeneral2.jpg"  title="Sketch">
 </p>
+
+# Logo
+<p align="center">
+  <img src="src/images/proto-logo.jpeg"  title="logoOne">
+</p>
+
+Nuestro logo esta basado en una luciernaga que hace referencia a encontrar la luz dentro de la oscuridad; mismo que se complementa con nuestro nombre LUX que en latin significa luz.
+
+<p align="center">
+  <img src="src/images/logo_lux.png"  title="logofinal">
+</p>
+
 
 # Prototipo de alta fidelidad
 

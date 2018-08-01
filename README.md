@@ -236,4 +236,11 @@ Contribuidor:
 2. Instala dependencias.
 3. Solicita pull requests.
 
+### Equipo de desarrollo:
+
+- [Citlalli Del Moral](https://github.com/CitlalliDMG)
+- [Génesis Mauries](https://github.com/GenesisMauries)
+- [Queletzú Pratts](https://github.com/alppacat)
+
+
 Nota: No olvides que aún seguimos trabajando en este proyecto, y por lo tanto nos encontramos en una versión Beta.

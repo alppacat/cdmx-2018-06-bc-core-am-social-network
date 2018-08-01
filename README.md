@@ -75,9 +75,12 @@ También es importante resaltar que los encuestados se encontraron interesados e
 
 # Proto-personas
 Despues de recopilar, analizar la información y obtener la primera aproximacion a las necesidades y los objetivos determinamos dos prototipos de personas:
-
-<img src="sketch/proto-femenino.jpg" alt="femproto">
-<img src="sketch/proto-masculino.jpg" alt="masproto">
+<p align="center">
+ <img src="sketch/proto-femenino.jpg" alt="femproto"> 
+</p>
+<p align="center">
+  <img src="sketch/proto-masculino.jpg" alt="masproto">
+</p>
 
 # Historias de usuario 
 ## Login
@@ -170,16 +173,35 @@ Después de elegir el nombre que nos representaría, decidimos dar el siguiente 
   <img src="sketch/sketchGeneral2.jpg"  title="Sketch">
 </p>
 
+# Logo
+<p align="center">
+  <img src="src/images/proto-logo.jpeg"  title="logoOne">
+</p>
+
+Nuestro logo esta basado en una luciernaga que hace referencia a encontrar la luz dentro de la oscuridad; mismo que se complementa con nuestro nombre LUX que en latin significa luz.
+
+<p align="center">
+  <img src="src/images/logo_lux.png"  title="logofinal">
+</p>
+
+
+# Prototipo de alta fidelidad
+
+Se desarrollo un prototipo en Marvel para guiarnos en el desarrollo de la plataforma.
+
+https://marvelapp.com/18aeb046
 
 # Color
 
-Se eligió una paleta monocromática basada en el color turquesa ya que en la psicología del color se cree que este tonalidad ayuda a abrir líneas de comunicación, transmite confianza y estabilidad.
+El color no sólo es sensación, sino que básica y principalmente es emoción por ello se elige una paleta basada en la gama de los azules.
 
-También hay estudios que indican que los colores dentro de la gama de los azules nos permiten desahogarnos, transmite una sensación de calma y ayuda a pensar en la situación más ideal.
+El azul es el color del espacio, de la lejanía y del infinito. En publicidad se le relaciona con la limpieza y la frescura. Es un color que simboliza ideas de tranquilidad, afecto, frío e inteligencia. 
+
+Existen estudios psicologicos que indican que los colores dentro de la gama de los azules nos permiten desahogarnos, transmite una sensación de calma y ayuda a pensar en la situación más ideal.
 
 Algunas palabras asociadas con este color son: Balance, claridad, creatividad, autosuficiencia.
 
-Todo esto se alinea con el mensaje que queremos transmitir a lxs usuarixs al usar la página web.
+Todo esto se alinea con el mensaje que queremos transmitir a los usuarios al usar la página web.
 
 ## Mobile First
 El proceso del diseño de nuestra red social fue pensada desde el inicio para visualizarse principalmente en los dispositivos más pequeños, sin embargo, la adaptabilidad en dispositivos grandes, como un ordenador es completamente posible y amigable para el usuario.
@@ -210,6 +232,8 @@ Visualmente las opiniones fueron totalmente positivas y se mostraban interesados
 Nicholas A. Christakis y James H. Fowler, _"Conectados"_, 2010, Santillana Ediciones Generales.
 Rivera de Javier, "Socialización Tecnológica", http://sociologiayredessociales.com/textos/SocializacionTecnologica-JavierdeRivera.pdf , Recuperado el 28 de Julio de 2018.
 Rivera de Javier, "Un análisis sociológico del Me gusta" , https://ssociologos.com/2015/11/09/un-analisis-sociologico-del-me-gusta/ Recuperado el 30 de Julio de 2018
+Paleta de colores Lux, https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=64d8cb&secondary.color=38468c&primary.text.color=333333&secondary.text.color=333333 Recuperado el 31 de Julio de 2018
+
 # Lux
 
 Nuestra aplicación tiene como objetivo princial la creación de espacios seguros así como redes de apoyo emocional para personas que padeceden y/o sufren de depresión y/o ansiedad.
@@ -226,5 +250,12 @@ Contribuidor:
 1. Forkea este repositorio.
 2. Instala dependencias.
 3. Solicita pull requests.
+
+### Equipo de desarrollo:
+
+- [Citlalli Del Moral](https://github.com/CitlalliDMG)
+- [Génesis Mauries](https://github.com/GenesisMauries)
+- [Queletzú Pratts](https://github.com/alppacat)
+
 
 Nota: No olvides que aún seguimos trabajando en este proyecto, y por lo tanto nos encontramos en una versión Beta.
